@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-
-const Home: NextPage = () => {
+import {prisma} from '../db/client'
+const Home: NextPage = (props: any) => {
   return (
     <div>
       <Head>
@@ -13,9 +13,23 @@ const Home: NextPage = () => {
 
       <main>
         <h1 className='text2xl font-bold'>Welcome to TinyPolls!</h1>
+        <code>
+          {props.questions}
+        </code>
       </main>
     </div>
   )
 }
 
 export default Home
+
+// Function to get all questions from the database
+export const getServerSideProps = async () => {
+  const questions = await prisma.pollQuestion.findMany()
+
+  return {
+    props: {
+      questions: JSON.stringify(questions),
+    }
+  }
+}
