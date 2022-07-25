@@ -2,23 +2,14 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import {prisma} from '../db/client'
-const Home: NextPage = (props: any) => {
-  return (
-    <div>
-      <Head>
-        <title>TinyPolls</title>
-        <meta name="description" content="Tinypolls app created in next" />
-        <link rel="icon" href="../public/favicon.ico" />
-      </Head>
+import { trpc } from '../utils/trpc'
 
-      <main>
-        <h1 className='text2xl font-bold'>Welcome to TinyPolls!</h1>
-        <code>
-          {props.questions}
-        </code>
-      </main>
-    </div>
-  )
+const Home: NextPage = () => {
+  const {data, isLoading} = trpc.useQuery(["hello"])
+
+  if(isLoading || !data) return <div>Loading...</div>
+
+  return <div>{data?.greeting}</div>
 }
 
 export default Home
