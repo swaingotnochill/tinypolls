@@ -19,4 +19,18 @@ model PollQuestion {
   endsAt     DateTime? // Optional
 
   question  String @db.VarChar(5000)
+
+  options Json
+
+  Vote Vote[]
+}
+
+model Vote {
+  id       String @id @default(cuid())
+  createdAt DateTime @default(now())
+
+  choice Int
+
+  PollQuestion   PollQuestion @relation(fields: [pollQuestionId], references: [id])
+  pollQuestionId String
 }

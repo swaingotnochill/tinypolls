@@ -6,8 +6,17 @@ const QuestionById: React.FC<{id: string }> = ({id}) => {
 
     if( !isLoading && !data) return <div>Question Not Found!!!</div>
 
-    return <div>{data?.question}</div>
-}
+    return (
+        <div className="p-8 flex flex-col">
+            <div className="text-2xl font-bold">{data?.question}</div>
+            <div>
+                {(data?.options as string[])?.map((option) => (
+                <div>{option}</div>
+            ))}
+            </div>
+        </div>
+    )
+    }
 const QuestionPage = () => {
     const {query } = useRouter()
     const { id } = query
