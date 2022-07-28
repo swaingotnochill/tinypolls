@@ -22,7 +22,6 @@ const QuestionCreator : React.FC = () => {
     className='border-slate'
     onKeyDown={(e) => {
       if(e.key === 'Enter') {
-        console.log("Pressed Enter", e.currentTarget.value)
         mutate({question: e.currentTarget.value})
       }
     }}
