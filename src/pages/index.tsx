@@ -4,6 +4,7 @@ import Image from 'next/image'
 import {prisma} from '../db/client'
 import { trpc } from '../utils/trpc'
 import React from 'react'
+import Link from 'next/link'
 
 const QuestionCreator : React.FC = () => {
   const inputRef = React.useRef<HTMLInputElement>(null)
@@ -39,9 +40,11 @@ const Home: NextPage = () => {
       <div className='text-2xl font-bold'>Questions</div>
     {data.map((question) => {
       return (
+        <Link href={`/question/${question.id}`}>
         <div key={question.id} className='my-2'>
           {question.question}
         </div>
+        </Link>
       )
     }
       )
