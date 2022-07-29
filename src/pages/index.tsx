@@ -55,7 +55,7 @@ const Home: NextPage = () => {
   //   <QuestionCreator />
   // </div>
 
-  <div className='flex justify-center items-center bg-black h-screen max-h-full'>
+  <div className='flex justify-center items-center bg-black h-screen overflow-hidden'>
     {isLoading ? (
       <div>Loading...</div>
     ) : (
