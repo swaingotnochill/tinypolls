@@ -3,9 +3,10 @@ import { PlusIcon, MinusIcon } from '@heroicons/react/solid'
 
 const CreatePoll = () => {
     return (
-        <div className='flex flex-col justify-center items-center bg-black h-screen max-h-full'>
-            <h1 className='text-4xl sm:text-6xl font-bold text-white mb-7'>Create your <span className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Polls</span></h1>
-            <div className='flex justify-start items-center w-5/6 md:w-5/6 max-w-5xl'>
+        <div className='flex justify-center items-center bg-black h-screen'>
+            <div className='w-5/6 md:w-5/6 max-w-5xl'>
+            <h1 className='text-4xl sm:text-6xl font-bold text-center text-white mb-7'>Create your <span className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Polls</span></h1>
+            <div className='flex justify-start items-center '>
                 <div className='space-y-5 flex-1 p-5 rounded-md bg-white'>
                     <div className='space-y-2'>
                         <h1>Question</h1>
@@ -27,6 +28,7 @@ const CreatePoll = () => {
                     <button className='bg-purple-400 text-xl font-semibold px-6 py-4 text-white rounded hover:bg-pink-600 ease-in-out duration-300 cursor-pointer'>Create Poll</button>
 
                 </div>
+            </div>
             </div>
         </div>
     )
