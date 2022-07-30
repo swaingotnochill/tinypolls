@@ -5,7 +5,7 @@ const CreatePoll = () => {
     return (
         <div className='flex justify-center items-center bg-black h-screen'>
             <div className='w-5/6 md:w-5/6 max-w-5xl'>
-            <h1 className='text-4xl sm:text-6xl font-bold text-center text-white mb-7'>Create your <span className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Polls</span></h1>
+            <h1 className='text-4xl sm:text-6xl font-bold text-center text-white mb-7'>Create your <span className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Poll</span></h1>
             <div className='flex justify-start items-center '>
                 <div className='space-y-5 flex-1 p-5 rounded-md bg-white'>
                     <div className='space-y-2'>
